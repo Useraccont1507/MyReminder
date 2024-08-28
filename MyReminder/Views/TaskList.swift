@@ -9,19 +9,29 @@ import SwiftUI
 
 struct TaskList: View {
   @EnvironmentObject var modelData: ModelData
+  @State private var pickerSelection: PickerModel = .all
   
-    var body: some View {
-      NavigationStack {
-        List {
-          ForEach(modelData.tasks) { task in
-            TaskListRow(task: task)
-          }
+  var body: some View {
+    NavigationStack {
+      List {
+        switch pickerSelection {
+        case .important:
+          ImportantPriorityTaskView(tasks: modelData.tasks)
+        case .normal:
+          NormalPriorityTaskView(tasks: modelData.tasks)
+        case .all:
+          AllPriorityTaskView(tasks: modelData.tasks)
         }
       }
+      .navigationTitle("Tasks")
+      .toolbar(content: {
+        PickerView(selection: $pickerSelection)
+      })
     }
+  }
 }
 
 #Preview {
-    TaskList()
+  TaskList()
     .environmentObject(ModelData())
 }

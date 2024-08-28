@@ -30,7 +30,11 @@ struct Task: Identifiable {
   }
 }
 
-enum TaskPriority: String, CaseIterable {
+enum TaskPriority: String, CaseIterable, Identifiable {
   case important = "important"
   case normal = "normal"
+  
+  var id: UUID {
+    UUID()
+  }
 }

@@ -14,7 +14,7 @@ struct TaskListRow: View {
       HStack {
         CompleteButtonView(taskToComplete: task)
         Text(task.title)
-          .font(.title2)
+          .font(.body)
         
         Spacer()
         
