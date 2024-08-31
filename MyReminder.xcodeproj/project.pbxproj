@@ -23,6 +23,7 @@
 		CE832CF12C7F86F000B64A4F /* AllPriorityTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CF02C7F86F000B64A4F /* AllPriorityTaskView.swift */; };
 		CE832CF32C7F8A0300B64A4F /* NormalPriorityTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CF22C7F8A0300B64A4F /* NormalPriorityTaskView.swift */; };
 		CE832CF52C7F8B1800B64A4F /* ImportantPriorityTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CF42C7F8B1800B64A4F /* ImportantPriorityTaskView.swift */; };
+		CEDF023A2C83394100BFB304 /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF02392C83394100BFB304 /* EditTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		CE832CF02C7F86F000B64A4F /* AllPriorityTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPriorityTaskView.swift; sourceTree = "<group>"; };
 		CE832CF22C7F8A0300B64A4F /* NormalPriorityTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalPriorityTaskView.swift; sourceTree = "<group>"; };
 		CE832CF42C7F8B1800B64A4F /* ImportantPriorityTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantPriorityTaskView.swift; sourceTree = "<group>"; };
+		CEDF02392C83394100BFB304 /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				CE832CCB2C7F204100B64A4F /* TaskList.swift */,
 				CE832CD72C7F276700B64A4F /* TaskListRow.swift */,
 				CE832CCD2C7F205600B64A4F /* AddTask.swift */,
+				CEDF02392C83394100BFB304 /* EditTask.swift */,
 				CE832CCF2C7F206B00B64A4F /* TaskHistory.swift */,
 			);
 			path = Views;
@@ -202,6 +205,7 @@
 				CE832CF12C7F86F000B64A4F /* AllPriorityTaskView.swift in Sources */,
 				CE832CCE2C7F205600B64A4F /* AddTask.swift in Sources */,
 				CE832CCC2C7F204100B64A4F /* TaskList.swift in Sources */,
+				CEDF023A2C83394100BFB304 /* EditTask.swift in Sources */,
 				CE832CED2C7F82F400B64A4F /* PickerModel.swift in Sources */,
 				CE832CF52C7F8B1800B64A4F /* ImportantPriorityTaskView.swift in Sources */,
 				CE832CDD2C7F2AE400B64A4F /* CompleteButtonView.swift in Sources */,
