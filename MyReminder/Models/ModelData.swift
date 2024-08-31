@@ -12,4 +12,8 @@ class ModelData: ObservableObject {
     Task(title: "Clean car", priority: .important,  isCompleted: false, date: Date.now),
     Task(title: "Clean home", priority: .normal, isCompleted: false, date: Date.now)
   ]
+  
+  func addTask(task: Task){
+    tasks.append(task)
+  }
 }

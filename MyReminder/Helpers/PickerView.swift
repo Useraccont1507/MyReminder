@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PickerView: View {
+struct ListPickerView: View {
   @Binding var selection: PickerModel
   
     var body: some View {
@@ -20,6 +20,40 @@ struct PickerView: View {
     }
 }
 
+struct AddTaskPriorityPickerView: View {
+  @Binding var selection: TaskPriority
+  
+  var body: some View {
+    VStack(alignment: .leading) {
+      Text("Priority")
+      Picker("Priority", selection: $selection) {
+        Text("normal").tag(TaskPriority.normal)
+        Text("important").tag(TaskPriority.important)
+      }
+      .pickerStyle(.segmented)
+    }
+  }
+}
+
+struct DatePickerView: View {
+  @Binding var selection: Date
+  
+  var body: some View {
+    VStack(alignment: .leading) {
+      Text("Date")
+        .padding(.leading, 4)
+      DatePicker("", selection: $selection)
+        .datePickerStyle(.wheel)
+        .padding(.top, -20)
+        .padding(.leading, -8)
+    }
+  }
+}
+
 #Preview {
-  PickerView(selection: .constant(.all))
+  VStack {
+    ListPickerView(selection: .constant(.all))
+    AddTaskPriorityPickerView(selection: .constant(.normal))
+    DatePickerView(selection: .constant(.now))
+  }
 }

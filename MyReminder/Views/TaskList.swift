@@ -25,7 +25,7 @@ struct TaskList: View {
       }
       .navigationTitle("Tasks")
       .toolbar(content: {
-        PickerView(selection: $pickerSelection)
+        ListPickerView(selection: $pickerSelection)
       })
     }
   }

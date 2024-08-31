@@ -21,12 +21,12 @@ struct ContentView: View {
       TaskList()
         .tag("List")
         .tabItem {
-          Label("List", systemImage: "list.bullet")
+          Label("Tasks", systemImage: "list.bullet")
         }
       AddTask()
         .tag("Add new")
         .tabItem {
-          Label("Add new", systemImage: "plus")
+          Label("New task", systemImage: "plus")
         }
       TaskHistory()
         .tag("History")
