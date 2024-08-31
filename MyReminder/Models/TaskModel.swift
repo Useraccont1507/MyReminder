@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Task: Identifiable {
+struct Task: Identifiable, Equatable {
   var id = UUID()
   var title: String
   var priority: TaskPriority

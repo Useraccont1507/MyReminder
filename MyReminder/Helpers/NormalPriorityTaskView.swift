@@ -13,7 +13,11 @@ struct NormalPriorityTaskView: View {
     Section("normal") {
       ForEach(tasks) { task in
         if task.priority == .normal {
-          TaskListRow(task: task)
+          NavigationLink {
+            EditTask(transferedTask: task)
+          } label: {
+            TaskListRow(task: task)
+          }
         }
       }
     }

@@ -47,7 +47,7 @@ struct AddTask: View {
           dismiss()
         }
       } message: {
-        Text("Task can't be saved without title")
+        Text("Task can't be added without title")
       }
       .alert("Done!", isPresented: $alertConfirmIsPresented) {
         Button("OK") {
@@ -55,7 +55,7 @@ struct AddTask: View {
           
         }
       } message: {
-        Text("Task was successfully saved in list")
+        Text("Task was successfully added in list")
       }
     }
     .onAppear {

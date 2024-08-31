@@ -13,7 +13,11 @@ struct ImportantPriorityTaskView: View {
     Section("important") {
       ForEach(tasks) { task in
         if task.priority == .important {
-          TaskListRow(task: task)
+          NavigationLink {
+            EditTask(transferedTask: task)
+          } label: {
+            TaskListRow(task: task)
+          }
         }
       }
     }

@@ -9,17 +9,19 @@ import SwiftUI
 
 struct AllPriorityTaskView: View {
   var tasks: [Task]
-    var body: some View {
-      ForEach(TaskPriority.allCases){ priority in
-        Section(priority.rawValue) {
-          ForEach(tasks) { task in
-            if task.priority == priority {
+  var body: some View {
+    ForEach(TaskPriority.allCases){ priority in
+      Section(priority.rawValue) {
+        ForEach(tasks) { task in
+          if task.priority == priority {
+            NavigationLink(destination: EditTask(transferedTask: task)) {
               TaskListRow(task: task)
             }
           }
         }
       }
     }
+  }
 }
 
 #Preview {
