@@ -43,4 +43,12 @@ class ModelData: ObservableObject {
     taskHistory[index].isCompleted = true
     print(taskHistory)
   }
+  
+  func deleteTask(indexSet: IndexSet) {
+    tasks.remove(atOffsets: indexSet)
+  }
+  
+  func deleteAllHistory() {
+    taskHistory.removeAll()
+  }
 }

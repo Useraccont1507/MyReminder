@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ImportantPriorityTaskView: View {
+  @EnvironmentObject var modelData: ModelData
+  
   var tasks: [Task]
   var body: some View {
     Section("important") {
@@ -20,6 +22,9 @@ struct ImportantPriorityTaskView: View {
           }
         }
       }
+      .onDelete(perform: { indexSet in
+        modelData.deleteTask(indexSet: indexSet)
+      })
     }
   }
 }

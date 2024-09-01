@@ -73,6 +73,11 @@ struct TaskHistory: View {
       }
       .navigationTitle("History")
       .background(Color(UIColor.secondarySystemBackground))
+      .toolbar(content: {
+        Button("Delete all history") {
+          modelData.deleteAllHistory()
+        }
+      })
     }
     .onAppear {
       todayTasks = modelData.taskHistory.filter { Calendar.current.isDateInToday($0.date) }

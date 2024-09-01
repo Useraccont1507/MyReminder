@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NormalPriorityTaskView: View {
+  @EnvironmentObject var modelData: ModelData
+  
   var tasks: [Task]
   var body: some View {
     Section("normal") {
@@ -20,6 +22,9 @@ struct NormalPriorityTaskView: View {
           }
         }
       }
+      .onDelete(perform: { indexSet in
+        modelData.deleteTask(indexSet: indexSet)
+      })
     }
   }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TaskList: View {
+  @Environment(\.editMode) private var editMode
   @EnvironmentObject var modelData: ModelData
   @State private var pickerSelection: PickerModel = .all
   
@@ -25,7 +26,12 @@ struct TaskList: View {
       }
       .navigationTitle("Tasks")
       .toolbar(content: {
-        ListPickerView(selection: $pickerSelection)
+        ToolbarItem(placement: .topBarLeading) {
+          EditButton()
+        }
+        ToolbarItem(placement: .topBarTrailing) {
+          ListPickerView(selection: $pickerSelection)
+        }
       })
     }
   }

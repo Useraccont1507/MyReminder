@@ -19,7 +19,7 @@
 		CE832CD82C7F276700B64A4F /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CD72C7F276700B64A4F /* TaskListRow.swift */; };
 		CE832CDD2C7F2AE400B64A4F /* CompleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CDC2C7F2AE400B64A4F /* CompleteButtonView.swift */; };
 		CE832CED2C7F82F400B64A4F /* PickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CEC2C7F82F400B64A4F /* PickerModel.swift */; };
-		CE832CEF2C7F847D00B64A4F /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CEE2C7F847D00B64A4F /* PickerView.swift */; };
+		CE832CEF2C7F847D00B64A4F /* PickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CEE2C7F847D00B64A4F /* PickerViews.swift */; };
 		CE832CF12C7F86F000B64A4F /* AllPriorityTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CF02C7F86F000B64A4F /* AllPriorityTaskView.swift */; };
 		CE832CF32C7F8A0300B64A4F /* NormalPriorityTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CF22C7F8A0300B64A4F /* NormalPriorityTaskView.swift */; };
 		CE832CF52C7F8B1800B64A4F /* ImportantPriorityTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CF42C7F8B1800B64A4F /* ImportantPriorityTaskView.swift */; };
@@ -43,7 +43,7 @@
 		CE832CD72C7F276700B64A4F /* TaskListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		CE832CDC2C7F2AE400B64A4F /* CompleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButtonView.swift; sourceTree = "<group>"; };
 		CE832CEC2C7F82F400B64A4F /* PickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModel.swift; sourceTree = "<group>"; };
-		CE832CEE2C7F847D00B64A4F /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		CE832CEE2C7F847D00B64A4F /* PickerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViews.swift; sourceTree = "<group>"; };
 		CE832CF02C7F86F000B64A4F /* AllPriorityTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPriorityTaskView.swift; sourceTree = "<group>"; };
 		CE832CF22C7F8A0300B64A4F /* NormalPriorityTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalPriorityTaskView.swift; sourceTree = "<group>"; };
 		CE832CF42C7F8B1800B64A4F /* ImportantPriorityTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantPriorityTaskView.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		CE832CDB2C7F2AAB00B64A4F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CE832CEE2C7F847D00B64A4F /* PickerView.swift */,
+				CE832CEE2C7F847D00B64A4F /* PickerViews.swift */,
 				CEDF023B2C846C8300BFB304 /* ComponentView.swift */,
 				CE832CDC2C7F2AE400B64A4F /* CompleteButtonView.swift */,
 				CE832CF02C7F86F000B64A4F /* AllPriorityTaskView.swift */,
@@ -219,7 +219,7 @@
 				CE832CED2C7F82F400B64A4F /* PickerModel.swift in Sources */,
 				CE832CF52C7F8B1800B64A4F /* ImportantPriorityTaskView.swift in Sources */,
 				CE832CDD2C7F2AE400B64A4F /* CompleteButtonView.swift in Sources */,
-				CE832CEF2C7F847D00B64A4F /* PickerView.swift in Sources */,
+				CE832CEF2C7F847D00B64A4F /* PickerViews.swift in Sources */,
 				CEDF023E2C84860E00BFB304 /* HistoryTaskView.swift in Sources */,
 				CEDF023C2C846C8300BFB304 /* ComponentView.swift in Sources */,
 				CE832CD82C7F276700B64A4F /* TaskListRow.swift in Sources */,

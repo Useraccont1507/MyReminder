@@ -12,6 +12,7 @@ struct TaskHistoryRow: View {
   
     var body: some View {
       HStack {
+        CompleteButtonView(taskToComplete: task)
         Text(task.title)
           .font(.body)
         Spacer()
