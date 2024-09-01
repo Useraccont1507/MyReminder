@@ -17,9 +17,7 @@ struct CompleteButtonView: View {
     Button(action: {
       Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false) { timer in
         withAnimation(.easeInOut) {
-          modelData.tasks.removeAll { task in
-            task.id == taskToComplete.id
-          }
+          modelData.makeTaskComplete(task: taskToComplete)
         }
       }
       buttonName = "checkmark.circle.fill"
@@ -31,6 +29,12 @@ struct CompleteButtonView: View {
     .disabled(isDisabled)
     .opacity(1.0)
     .buttonStyle(BorderlessButtonStyle())
+    .onAppear {
+      if taskToComplete.isCompleted == true {
+        buttonName = "checkmark.circle.fill"
+        isDisabled = true
+      }
+    }
   }
 }
 

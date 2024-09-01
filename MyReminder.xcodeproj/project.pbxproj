@@ -24,6 +24,9 @@
 		CE832CF32C7F8A0300B64A4F /* NormalPriorityTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CF22C7F8A0300B64A4F /* NormalPriorityTaskView.swift */; };
 		CE832CF52C7F8B1800B64A4F /* ImportantPriorityTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CF42C7F8B1800B64A4F /* ImportantPriorityTaskView.swift */; };
 		CEDF023A2C83394100BFB304 /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF02392C83394100BFB304 /* EditTask.swift */; };
+		CEDF023C2C846C8300BFB304 /* ComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF023B2C846C8300BFB304 /* ComponentView.swift */; };
+		CEDF023E2C84860E00BFB304 /* HistoryTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF023D2C84860E00BFB304 /* HistoryTaskView.swift */; };
+		CEDF02402C84933D00BFB304 /* TaskHistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF023F2C84933D00BFB304 /* TaskHistoryRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		CE832CF22C7F8A0300B64A4F /* NormalPriorityTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalPriorityTaskView.swift; sourceTree = "<group>"; };
 		CE832CF42C7F8B1800B64A4F /* ImportantPriorityTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantPriorityTaskView.swift; sourceTree = "<group>"; };
 		CEDF02392C83394100BFB304 /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
+		CEDF023B2C846C8300BFB304 /* ComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentView.swift; sourceTree = "<group>"; };
+		CEDF023D2C84860E00BFB304 /* HistoryTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTaskView.swift; sourceTree = "<group>"; };
+		CEDF023F2C84933D00BFB304 /* TaskHistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHistoryRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +128,13 @@
 			isa = PBXGroup;
 			children = (
 				CE832CEE2C7F847D00B64A4F /* PickerView.swift */,
+				CEDF023B2C846C8300BFB304 /* ComponentView.swift */,
 				CE832CDC2C7F2AE400B64A4F /* CompleteButtonView.swift */,
 				CE832CF02C7F86F000B64A4F /* AllPriorityTaskView.swift */,
 				CE832CF22C7F8A0300B64A4F /* NormalPriorityTaskView.swift */,
+				CEDF023F2C84933D00BFB304 /* TaskHistoryRow.swift */,
 				CE832CF42C7F8B1800B64A4F /* ImportantPriorityTaskView.swift */,
+				CEDF023D2C84860E00BFB304 /* HistoryTaskView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDF02402C84933D00BFB304 /* TaskHistoryRow.swift in Sources */,
 				CE832CF32C7F8A0300B64A4F /* NormalPriorityTaskView.swift in Sources */,
 				CE832CD42C7F256D00B64A4F /* TaskModel.swift in Sources */,
 				CE832CF12C7F86F000B64A4F /* AllPriorityTaskView.swift in Sources */,
@@ -210,6 +220,8 @@
 				CE832CF52C7F8B1800B64A4F /* ImportantPriorityTaskView.swift in Sources */,
 				CE832CDD2C7F2AE400B64A4F /* CompleteButtonView.swift in Sources */,
 				CE832CEF2C7F847D00B64A4F /* PickerView.swift in Sources */,
+				CEDF023E2C84860E00BFB304 /* HistoryTaskView.swift in Sources */,
+				CEDF023C2C846C8300BFB304 /* ComponentView.swift in Sources */,
 				CE832CD82C7F276700B64A4F /* TaskListRow.swift in Sources */,
 				CE832CD02C7F206B00B64A4F /* TaskHistory.swift in Sources */,
 				CE832CC02C7F1EE200B64A4F /* ContentView.swift in Sources */,
@@ -356,6 +368,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,6 +398,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

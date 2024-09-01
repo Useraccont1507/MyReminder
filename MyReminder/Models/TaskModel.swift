@@ -26,7 +26,11 @@ struct Task: Identifiable, Equatable {
       color = .red
     }
     
-    return Text(dateFormatter.string(from: date)).foregroundStyle(color)
+    if #available(iOS 17.0, *) {
+      return Text(dateFormatter.string(from: date)).foregroundStyle(color)
+    } else {
+      return Text(dateFormatter.string(from: date)).foregroundColor(color)
+    }
   }
 }
 
