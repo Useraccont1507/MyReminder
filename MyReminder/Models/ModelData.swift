@@ -8,15 +8,17 @@
 import Foundation
 
 class ModelData: ObservableObject {
-  @Published var tasks: [Task] = [
-    Task(title: "Clean car", priority: .important,  isCompleted: false, date: Date.now),
-    Task(title: "Clean home", priority: .normal, isCompleted: false, date: Date.now)
-  ]
+  @Published var tasks: [Task] = [] {
+    didSet {
+      Storage.shared.save(tasks: tasks)
+    }
+  }
   
-  @Published var taskHistory: [Task] = [
-    Task(title: "Clean car", priority: .important,  isCompleted: false, date: Date.now),
-    Task(title: "Clean home", priority: .normal, isCompleted: false, date: Date.now)
-  ]
+  @Published var taskHistory: [Task] = [] {
+    didSet {
+      Storage.shared.save(tasks: taskHistory)
+    }
+  }
   
   func addTask(task: Task) {
     tasks.append(task)

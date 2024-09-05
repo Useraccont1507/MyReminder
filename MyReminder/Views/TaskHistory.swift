@@ -13,6 +13,7 @@ struct TaskHistory: View {
   @State var todayTasks: [Task] = []
   @State var completedTasks: [Task] = []
   @State var incompletedTasks: [Task] = []
+
   
   var body: some View {
     NavigationStack {
@@ -76,6 +77,9 @@ struct TaskHistory: View {
       .toolbar(content: {
         Button("Delete all history") {
           modelData.deleteAllHistory()
+          todayTasks = modelData.taskHistory.filter { Calendar.current.isDateInToday($0.date) }
+          completedTasks = modelData.taskHistory.filter { $0.isCompleted == true }
+          incompletedTasks = modelData.taskHistory.filter { $0.isCompleted == false }
         }
       })
     }

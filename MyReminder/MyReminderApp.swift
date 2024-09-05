@@ -15,6 +15,10 @@ struct MyReminderApp: App {
         WindowGroup {
             ContentView()
             .environmentObject(modelData)
+            .onAppear {
+              modelData.tasks = Storage.shared.load()
+              modelData.taskHistory = Storage.shared.load()
+            }
         }
     }
 }

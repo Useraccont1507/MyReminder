@@ -27,6 +27,7 @@ struct EditTask: View {
               }
             }
         }
+        
         AddTaskPriorityPickerView(selection: $transferedTask.priority)
         DatePickerView(selection: $transferedTask.date)
       }
