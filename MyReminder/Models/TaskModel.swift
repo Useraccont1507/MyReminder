@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Task: Identifiable, Equatable {
   var id = UUID()
+  var notificationIdentifier = UUID().uuidString
   var title: String
   var priority: TaskPriority
   var isCompleted: Bool

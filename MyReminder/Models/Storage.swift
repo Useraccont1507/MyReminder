@@ -19,6 +19,7 @@ class Storage {
     if let arrayOfDict = storage.array(forKey: storageKey) as? [[String: Any]] {
       print(arrayOfDict)
       for dict in arrayOfDict {
+        let notificationIdentifier = dict["notificationIdentifier"] as! String
         let title = dict["title"] as! String
         let priority = TaskPriority(rawValue: dict["priority"] as! String)!
         let isCompleted = dict["isCompleted"] as! Bool
@@ -26,6 +27,7 @@ class Storage {
         
         arrayToReturn.append(
           Task(
+            notificationIdentifier: notificationIdentifier,
             title: title,
             priority: priority,
             isCompleted: isCompleted,
@@ -42,6 +44,7 @@ class Storage {
     var arrayOfDict: [[String:Any]] = []
     for task in tasks {
       var dict: [String: Any] = [:]
+      dict["notificationIdentifier"] = task.notificationIdentifier
       dict["title"] = task.title
       dict["priority"] = task.priority.rawValue
       

@@ -23,6 +23,8 @@ class ModelData: ObservableObject {
   func addTask(task: Task) {
     tasks.append(task)
     taskHistory.append(task)
+    
+    LocalNotifications.shared.checkForPermission(task: task)
   }
   
   func editTask(task: Task) {
@@ -35,6 +37,8 @@ class ModelData: ObservableObject {
       return
     }
     taskHistory[secondaryIndex] = task
+    
+    LocalNotifications.shared.checkForPermission(task: task)
   }
   
   func makeTaskComplete(task: Task) {
@@ -43,10 +47,12 @@ class ModelData: ObservableObject {
     }
     tasks.remove(at: index)
     taskHistory[index].isCompleted = true
-    print(taskHistory)
+    
+    LocalNotifications.shared.removeNotification(task: task)
   }
   
   func deleteTask(indexSet: IndexSet) {
+    LocalNotifications.shared.removeNotification(task: tasks[indexSet.first!])
     tasks.remove(atOffsets: indexSet)
   }
   

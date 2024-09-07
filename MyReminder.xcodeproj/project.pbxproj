@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2811402C89A42000B19F66 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28113F2C89A42000B19F66 /* NotificationModel.swift */; };
+		CE2811552C8CC13700B19F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2811542C8CC13700B19F66 /* AppDelegate.swift */; };
 		CE832CBE2C7F1EE200B64A4F /* MyReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CBD2C7F1EE200B64A4F /* MyReminderApp.swift */; };
 		CE832CC02C7F1EE200B64A4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CBF2C7F1EE200B64A4F /* ContentView.swift */; };
 		CE832CC22C7F1EE300B64A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE832CC12C7F1EE300B64A4F /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE28113F2C89A42000B19F66 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		CE2811542C8CC13700B19F66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE832CBA2C7F1EE200B64A4F /* MyReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE832CBD2C7F1EE200B64A4F /* MyReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReminderApp.swift; sourceTree = "<group>"; };
 		CE832CBF2C7F1EE200B64A4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 		CE832CBC2C7F1EE200B64A4F /* MyReminder */ = {
 			isa = PBXGroup;
 			children = (
+				CE2811542C8CC13700B19F66 /* AppDelegate.swift */,
 				CE832CBD2C7F1EE200B64A4F /* MyReminderApp.swift */,
 				CE832CD22C7F255900B64A4F /* Models */,
 				CE832CD12C7F254F00B64A4F /* Views */,
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				CE832CD32C7F256D00B64A4F /* TaskModel.swift */,
+				CE28113F2C89A42000B19F66 /* NotificationModel.swift */,
 				CE8E85AC2C88B544004F8E00 /* Storage.swift */,
 				CE832CEC2C7F82F400B64A4F /* PickerModel.swift */,
 				CE832CD52C7F263200B64A4F /* ModelData.swift */,
@@ -230,6 +236,8 @@
 				CE832CD02C7F206B00B64A4F /* TaskHistory.swift in Sources */,
 				CE832CC02C7F1EE200B64A4F /* ContentView.swift in Sources */,
 				CE832CBE2C7F1EE200B64A4F /* MyReminderApp.swift in Sources */,
+				CE2811552C8CC13700B19F66 /* AppDelegate.swift in Sources */,
+				CE2811402C89A42000B19F66 /* NotificationModel.swift in Sources */,
 				CE832CD62C7F263200B64A4F /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
