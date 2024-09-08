@@ -12,7 +12,7 @@ struct ImportantPriorityTaskView: View {
   
   var tasks: [Task]
   var body: some View {
-    Section("important") {
+    Section("important".localized) {
       ForEach(tasks) { task in
         if task.priority == .important {
           NavigationLink {

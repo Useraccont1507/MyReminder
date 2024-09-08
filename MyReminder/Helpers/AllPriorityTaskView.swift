@@ -12,7 +12,7 @@ struct AllPriorityTaskView: View {
   var tasks: [Task]
   var body: some View {
     ForEach(TaskPriority.allCases){ priority in
-      Section(priority.rawValue) {
+      Section(priority.rawValue.localized) {
         ForEach(tasks) { task in
           if task.priority == priority {
             NavigationLink(destination: EditTask(transferedTask: task)) {

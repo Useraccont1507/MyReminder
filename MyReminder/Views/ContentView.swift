@@ -22,17 +22,17 @@ struct ContentView: View {
       TaskList()
         .tag("List")
         .tabItem {
-          Label("Tasks", systemImage: "list.bullet")
+          Label("tasks".localized.localizedCapitalized, systemImage: "list.bullet")
         }
       AddTask()
         .tag("Add new")
         .tabItem {
-          Label("New task", systemImage: "plus")
+          Label("new".localized.localizedCapitalized + " " + "tasks".localized, systemImage: "plus")
         }
       TaskHistory()
         .tag("History")
         .tabItem {
-          Label("History", systemImage: "clock")
+          Label("history".localized.localizedCapitalized, systemImage: "clock")
         }
     }
   }

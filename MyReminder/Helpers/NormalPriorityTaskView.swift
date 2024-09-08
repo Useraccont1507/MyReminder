@@ -12,7 +12,7 @@ struct NormalPriorityTaskView: View {
   
   var tasks: [Task]
   var body: some View {
-    Section("normal") {
+    Section("normal".localized) {
       ForEach(tasks) { task in
         if task.priority == .normal {
           NavigationLink {

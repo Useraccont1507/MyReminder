@@ -18,8 +18,8 @@ struct EditTask: View {
     NavigationStack {
       List {
         VStack(alignment: .leading) {
-          Text("Title")
-          TextField("Add text here", text: $transferedTask.title)
+          Text("title".localized.localizedCapitalized)
+          TextField("add_text_here".localized, text: $transferedTask.title)
             .textFieldStyle(.automatic)
             .onChange(of: transferedTask.title) { newValue in
               if newValue.count > 18 {
@@ -31,9 +31,9 @@ struct EditTask: View {
         AddTaskPriorityPickerView(selection: $transferedTask.priority)
         DatePickerView(selection: $transferedTask.date)
       }
-      .navigationTitle("Edit task")
+      .navigationTitle("edit".localized.localizedCapitalized + " " + "tasks".localized)
       .toolbar {
-        Button("Done") {
+        Button("done".localized.localizedCapitalized) {
           if transferedTask.title.isEmpty {
             alertErrorIsPresented.toggle()
           } else {
@@ -43,19 +43,19 @@ struct EditTask: View {
         }
         .bold()
       }
-      .alert("Oops! Something went wrong", isPresented: $alertErrorIsPresented) {
+      .alert("Oops_Something_went_wrong", isPresented: $alertErrorIsPresented) {
         Button("OK") {
           alertErrorIsPresented.toggle()
         }
       } message: {
-        Text("Task can't be saved without title")
+        Text("Task_can't_be_added_without_title")
       }
-      .alert("Done!", isPresented: $alertConfirmIsPresented) {
+      .alert("done".localized.localizedCapitalized + "!", isPresented: $alertConfirmIsPresented) {
         Button("OK") {
          dismiss()
         }
       } message: {
-        Text("Task was successfully edited in list")
+        Text("Task_was_successfully_added_in_list")
       }
     }
     .onAppear {

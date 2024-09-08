@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  MyReminder
+
+  Created by User on 07.09.2024.
+  
+*/
+"tasks" = "tasks";
+"new" = "new";
+"history" = "history";
+
+
+"all" = "all";
+"normal" = "normal";
+"important" = "important";
+"tasks" = "tasks";
+"edit" = "edit";
+
+
+"title" = "назва";
+"add_text_here" = "Введіть текст сюди";
+"priority" = "пріоритиет";
+"date" = "дата";
+"done" = "готово";
+
+"delete_all" = "Delete all history";
+"today" = "today";
+"completed" = "completed";
+"incompleted" = "incompleted";
+
+"Oops_Something_went_wrong" = "Oops! Something went wrong";
+"Task_can't_be_added_without_title" = "Task can't be added without title";
+"Task_was_successfully_added_in_list" = "Task was successfully added in list";
+

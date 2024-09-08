@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE2811402C89A42000B19F66 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28113F2C89A42000B19F66 /* NotificationModel.swift */; };
 		CE2811552C8CC13700B19F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2811542C8CC13700B19F66 /* AppDelegate.swift */; };
+		CE2811572C8CCE0600B19F66 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2811562C8CCE0600B19F66 /* String+Extensions.swift */; };
+		CE28116E2C8CD0E200B19F66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE28116D2C8CD0E200B19F66 /* Localizable.strings */; };
 		CE832CBE2C7F1EE200B64A4F /* MyReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CBD2C7F1EE200B64A4F /* MyReminderApp.swift */; };
 		CE832CC02C7F1EE200B64A4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CBF2C7F1EE200B64A4F /* ContentView.swift */; };
 		CE832CC22C7F1EE300B64A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE832CC12C7F1EE300B64A4F /* Assets.xcassets */; };
@@ -35,6 +37,9 @@
 /* Begin PBXFileReference section */
 		CE28113F2C89A42000B19F66 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		CE2811542C8CC13700B19F66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE2811562C8CCE0600B19F66 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		CE28116C2C8CD0E200B19F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE28116F2C8CD13300B19F66 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE832CBA2C7F1EE200B64A4F /* MyReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE832CBD2C7F1EE200B64A4F /* MyReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReminderApp.swift; sourceTree = "<group>"; };
 		CE832CBF2C7F1EE200B64A4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +75,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2811582C8CCE7800B19F66 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				CE2811562C8CCE0600B19F66 /* String+Extensions.swift */,
+				CE28116D2C8CD0E200B19F66 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		CE2811592C8CCE9200B19F66 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE2811542C8CC13700B19F66 /* AppDelegate.swift */,
+				CE832CBD2C7F1EE200B64A4F /* MyReminderApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		CE832CB12C7F1EE200B64A4F = {
 			isa = PBXGroup;
 			children = (
@@ -89,10 +112,10 @@
 		CE832CBC2C7F1EE200B64A4F /* MyReminder */ = {
 			isa = PBXGroup;
 			children = (
-				CE2811542C8CC13700B19F66 /* AppDelegate.swift */,
-				CE832CBD2C7F1EE200B64A4F /* MyReminderApp.swift */,
+				CE2811592C8CCE9200B19F66 /* App */,
 				CE832CD22C7F255900B64A4F /* Models */,
 				CE832CD12C7F254F00B64A4F /* Views */,
+				CE2811582C8CCE7800B19F66 /* Localization */,
 				CE832CDB2C7F2AAB00B64A4F /* Helpers */,
 				CE832CC12C7F1EE300B64A4F /* Assets.xcassets */,
 				CE832CC32C7F1EE300B64A4F /* Preview Content */,
@@ -190,6 +213,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = CE832CB12C7F1EE200B64A4F;
 			productRefGroup = CE832CBB2C7F1EE200B64A4F /* Products */;
@@ -207,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE832CC52C7F1EE300B64A4F /* Preview Assets.xcassets in Resources */,
+				CE28116E2C8CD0E200B19F66 /* Localizable.strings in Resources */,
 				CE832CC22C7F1EE300B64A4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +255,7 @@
 				CE832CF52C7F8B1800B64A4F /* ImportantPriorityTaskView.swift in Sources */,
 				CE832CDD2C7F2AE400B64A4F /* CompleteButtonView.swift in Sources */,
 				CE832CEF2C7F847D00B64A4F /* PickerViews.swift in Sources */,
+				CE2811572C8CCE0600B19F66 /* String+Extensions.swift in Sources */,
 				CEDF023E2C84860E00BFB304 /* HistoryTaskView.swift in Sources */,
 				CEDF023C2C846C8300BFB304 /* ComponentView.swift in Sources */,
 				CE832CD82C7F276700B64A4F /* TaskListRow.swift in Sources */,
@@ -244,12 +270,25 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		CE28116D2C8CD0E200B19F66 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE28116C2C8CD0E200B19F66 /* en */,
+				CE28116F2C8CD13300B19F66 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		CE832CC62C7F1EE300B64A4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -313,6 +352,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

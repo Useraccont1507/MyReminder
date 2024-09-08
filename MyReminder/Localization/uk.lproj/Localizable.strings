@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  MyReminder
+
+  Created by User on 07.09.2024.
+  
+*/
+
+"tasks" = "завдання";
+"new" = "нове";
+"history" = "історія";
+
+
+"all" = "усі";
+"normal" = "звичайні";
+"important" = "важливі";
+"edit" = "редагувати";
+
+
+"title" = "назва";
+"add_text_here" = "Введіть текст сюди";
+"priority" = "пріоритет";
+"date" = "дата";
+"done" = "готово";
+
+"delete_all_history" = "Очистити історію";
+"today" = "сьогодні";
+"completed" = "виконані";
+"incompleted" = "невиконані";
+
+"Oops_Something_went_wrong" = "Упс! Щось пішло не так";
+"Task_can't_be_added_without_title" = "Завдання не може бути збереженим без назви";
+"Task_was_successfully_added_in_list" = "Завдання було успішно додане";

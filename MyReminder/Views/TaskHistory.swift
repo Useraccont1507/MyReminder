@@ -21,10 +21,10 @@ struct TaskHistory: View {
         VStack {
           HStack {
             NavigationLink {
-              HistoryTaskView(listTitle: "Today", tasks: todayTasks)
+              HistoryTaskView(listTitle: "today".localized.localizedCapitalized, tasks: todayTasks)
             } label: {
               ComponentView(
-                labelText: "Today",
+                labelText: "today".localized.localizedCapitalized,
                 labelCount: todayTasks.count,
                 systemImageName: "calendar.circle.fill",
                 imageForegroundColor: .yellow
@@ -33,10 +33,10 @@ struct TaskHistory: View {
                 .padding(.vertical)
             }
             NavigationLink {
-              HistoryTaskView(listTitle: "All", tasks: modelData.taskHistory)
+              HistoryTaskView(listTitle: "all".localized.localizedCapitalized, tasks: modelData.taskHistory)
             } label: {
               ComponentView(
-                labelText: "All",
+                labelText: "all".localized.localizedCapitalized,
                 labelCount: modelData.taskHistory.count,
                 systemImageName: "folder.circle.fill",
                 imageForegroundColor: .blue
@@ -47,10 +47,10 @@ struct TaskHistory: View {
           }
           HStack {
             NavigationLink {
-              HistoryTaskView(listTitle: "Completed", tasks: completedTasks)
+              HistoryTaskView(listTitle: "completed".localized.localizedCapitalized, tasks: completedTasks)
             } label: {
               ComponentView(
-                labelText: "Completed",
+                labelText: "completed".localized.localizedCapitalized,
                 labelCount: completedTasks.count,
                 systemImageName: "checkmark.circle.fill",
                 imageForegroundColor: .green
@@ -58,10 +58,10 @@ struct TaskHistory: View {
                 .padding(.leading)
             }
             NavigationLink {
-              HistoryTaskView(listTitle: "Incompleted", tasks: incompletedTasks)
+              HistoryTaskView(listTitle: "incompleted".localized.localizedCapitalized, tasks: incompletedTasks)
             } label: {
               ComponentView(
-                labelText: "Incompleted",
+                labelText: "incompleted".localized.localizedCapitalized,
                 labelCount: incompletedTasks.count,
                 systemImageName: "xmark.circle.fill",
                 imageForegroundColor: .red
@@ -72,10 +72,10 @@ struct TaskHistory: View {
         }
         .background(Color(UIColor.secondarySystemBackground))
       }
-      .navigationTitle("History")
+      .navigationTitle("history".localized.localizedCapitalized)
       .background(Color(UIColor.secondarySystemBackground))
       .toolbar(content: {
-        Button("Delete all history") {
+        Button("delete_all_history".localized) {
           modelData.deleteAllHistory()
           todayTasks = modelData.taskHistory.filter { Calendar.current.isDateInToday($0.date) }
           completedTasks = modelData.taskHistory.filter { $0.isCompleted == true }

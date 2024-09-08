@@ -5,9 +5,9 @@ struct ListPickerView: View {
   
   var body: some View {
     Picker("", selection: $selection) {
-      Text("All").tag(PickerModel.all)
-      Text("Important").tag(PickerModel.important)
-      Text("Normal").tag(PickerModel.normal)
+      Text("all".localized.localizedCapitalized).tag(PickerModel.all)
+      Text("important".localized.localizedCapitalized).tag(PickerModel.important)
+      Text("normal".localized.localizedCapitalized).tag(PickerModel.normal)
     }
   }
 }
@@ -17,10 +17,10 @@ struct AddTaskPriorityPickerView: View {
   
   var body: some View {
     VStack(alignment: .leading) {
-      Text("Priority")
+      Text("priority".localized.localizedCapitalized)
       Picker("", selection: $selection) {
-        Text("normal").tag(TaskPriority.normal)
-        Text("important").tag(TaskPriority.important)
+        Text("normal".localized).tag(TaskPriority.normal)
+        Text("important".localized).tag(TaskPriority.important)
       }
       .pickerStyle(.segmented)
     }
@@ -32,7 +32,7 @@ struct DatePickerView: View {
   
   var body: some View {
     VStack(alignment: .leading) {
-      Text("Date")
+      Text("date".localized.localizedCapitalized)
         .padding(.leading, 8)
       DatePicker("", selection: $selection)
         .datePickerStyle(.wheel)

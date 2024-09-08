@@ -24,7 +24,7 @@ struct TaskList: View {
           AllPriorityTaskView(tasks: modelData.tasks)
         }
       }
-      .navigationTitle("Tasks")
+      .navigationTitle("tasks".localized.localizedCapitalized)
       .toolbar(content: {
         ToolbarItem(placement: .topBarLeading) {
           EditButton()

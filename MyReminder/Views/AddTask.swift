@@ -18,8 +18,8 @@ struct AddTask: View {
     NavigationStack {
       List {
         VStack(alignment: .leading) {
-          Text("Title")
-          TextField("Add text here", text: $newTask.title)
+          Text("title".localized.localizedCapitalized)
+          TextField("add_text_here".localized, text: $newTask.title)
             .textFieldStyle(.automatic)
             .onChange(of: newTask.title) { newValue in
               if newValue.count > 18 {
@@ -30,9 +30,9 @@ struct AddTask: View {
         AddTaskPriorityPickerView(selection: $newTask.priority)
         DatePickerView(selection: $newTask.date)
       }
-      .navigationTitle("New task")
+      .navigationTitle("new".localized.capitalized(with: .current) + " " + "tasks".localized)
       .toolbar {
-        Button("Done") {
+        Button("done".localized.localizedCapitalized) {
           if newTask.title.isEmpty {
             alertErrorIsPresented.toggle()
           } else {
@@ -42,20 +42,20 @@ struct AddTask: View {
         }
         .bold()
       }
-      .alert("Oops! Something went wrong", isPresented: $alertErrorIsPresented) {
+      .alert("Oops_Something_went_wrong", isPresented: $alertErrorIsPresented) {
         Button("OK") {
           dismiss()
         }
       } message: {
-        Text("Task can't be added without title")
+        Text("Task_can't_be_added_without_title")
       }
-      .alert("Done!", isPresented: $alertConfirmIsPresented) {
+      .alert("done".localized.localizedCapitalized + "!", isPresented: $alertConfirmIsPresented) {
         Button("OK") {
           dismiss()
           
         }
       } message: {
-        Text("Task was successfully added in list")
+        Text("Task_was_successfully_added_in_list")
       }
     }
     .onAppear {
