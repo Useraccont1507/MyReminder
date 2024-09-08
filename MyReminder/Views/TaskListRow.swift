@@ -24,5 +24,9 @@ struct TaskListRow: View {
 }
 
 #Preview {
-  TaskListRow(task: ModelData().tasks.first!)
+  TaskListRow(task: ModelData().tasks.first ?? Task(
+    title: "Test",
+    priority: .normal,
+    isCompleted: false, date: Date())
+  )
 }

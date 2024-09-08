@@ -24,7 +24,7 @@ struct CompleteButtonView: View {
       isDisabled = true
     }, label: {
       Image(systemName: buttonName)
-        .foregroundStyle(.blue)
+        .foregroundStyle(.accent)
     })
     .disabled(isDisabled)
     .opacity(1.0)
@@ -39,6 +39,10 @@ struct CompleteButtonView: View {
 }
 
 #Preview {
-  CompleteButtonView(taskToComplete: ModelData().tasks.first!)
-    .environmentObject(ModelData())
+  CompleteButtonView(taskToComplete: ModelData().tasks.first ?? Task(
+    title: "Test",
+    priority: .normal,
+    isCompleted: false, date: Date())
+  )
+  .environmentObject(ModelData())
 }

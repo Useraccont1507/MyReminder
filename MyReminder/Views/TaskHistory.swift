@@ -70,10 +70,10 @@ struct TaskHistory: View {
             }
           }
         }
-        .background(Color(UIColor.secondarySystemBackground))
+        .background(Color(UIColor.historyBackground))
       }
       .navigationTitle("history".localized.localizedCapitalized)
-      .background(Color(UIColor.secondarySystemBackground))
+      .background(Color(UIColor.historyBackground))
       .toolbar(content: {
         Button("delete_all_history".localized) {
           modelData.deleteAllHistory()

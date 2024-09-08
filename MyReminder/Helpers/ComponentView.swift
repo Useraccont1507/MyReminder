@@ -16,7 +16,7 @@ struct ComponentView: View {
   var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: 25)
-        .foregroundStyle(.white)
+        .foregroundStyle(.componentView)
       VStack(alignment: .leading) {
         HStack {
           Image(systemName: systemImageName)
