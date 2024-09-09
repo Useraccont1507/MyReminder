@@ -42,10 +42,13 @@ class ModelData: ObservableObject {
   }
   
   func makeTaskComplete(task: Task) {
+    print("fffffff")
     guard let index = tasks.firstIndex(where: {$0.id == task.id}) else {
       fatalError("cannot find index")
     }
-    tasks.remove(at: index)
+    DispatchQueue.main.async {
+      self.tasks.remove(at: index)
+    }
     taskHistory[index].isCompleted = true
     
     LocalNotifications.shared.removeNotification(task: task)
