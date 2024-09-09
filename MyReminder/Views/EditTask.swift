@@ -13,6 +13,7 @@ struct EditTask: View {
   @State var transferedTask: Task
   @State private var alertErrorIsPresented = false
   @State private var alertConfirmIsPresented = false
+  @FocusState private var isFocused: Bool
   
   var body: some View {
     NavigationStack {
@@ -21,6 +22,7 @@ struct EditTask: View {
           Text("title".localized.localizedCapitalized)
           TextField("add_text_here".localized, text: $transferedTask.title)
             .textFieldStyle(.automatic)
+            .focused($isFocused)
             .onChange(of: transferedTask.title) { newValue in
               if newValue.count > 18 {
                 transferedTask.title = String(newValue.prefix(18))
@@ -30,8 +32,11 @@ struct EditTask: View {
         
         AddTaskPriorityPickerView(selection: $transferedTask.priority)
         DatePickerView(selection: $transferedTask.date)
+          .onTapGesture {
+            isFocused = false
+          }
       }
-      .navigationTitle("edit".localized.localizedCapitalized + " " + "tasks".localized)
+      .navigationTitle("edit".localized.localizedCapitalized)
       .toolbar {
         Button("done".localized.localizedCapitalized) {
           if transferedTask.title.isEmpty {
@@ -55,7 +60,7 @@ struct EditTask: View {
          dismiss()
         }
       } message: {
-        Text("Task_was_successfully_added_in_list")
+        Text("Task_was_successfully_edited")
       }
     }
     .onAppear {

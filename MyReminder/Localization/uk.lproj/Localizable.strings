@@ -14,7 +14,7 @@
 "all" = "усі";
 "normal" = "звичайні";
 "important" = "важливі";
-"edit" = "редагувати";
+"edit" = "Змінити";
 
 
 "title" = "назва";
@@ -31,3 +31,4 @@
 "Oops_Something_went_wrong" = "Упс! Щось пішло не так";
 "Task_can't_be_added_without_title" = "Завдання не може бути збереженим без назви";
 "Task_was_successfully_added_in_list" = "Завдання було успішно додане";
+"Task_was_successfully_edited" = "Завдання було успішно змінене";

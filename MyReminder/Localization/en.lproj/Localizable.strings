@@ -31,4 +31,5 @@
 "Oops_Something_went_wrong" = "Oops! Something went wrong";
 "Task_can't_be_added_without_title" = "Task can't be added without title";
 "Task_was_successfully_added_in_list" = "Task was successfully added in list";
+"Task_was_successfully_edited" = "Task was successfully edited";
 

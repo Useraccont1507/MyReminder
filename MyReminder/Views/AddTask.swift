@@ -13,6 +13,7 @@ struct AddTask: View {
   @State private var newTask = Task(title: "", priority: .normal, isCompleted: false, date: Date.now)
   @State private var alertErrorIsPresented = false
   @State private var alertConfirmIsPresented = false
+  @FocusState private var isFocused: Bool
   
   var body: some View {
     NavigationStack {
@@ -21,6 +22,7 @@ struct AddTask: View {
           Text("title".localized.localizedCapitalized)
           TextField("add_text_here".localized, text: $newTask.title)
             .textFieldStyle(.automatic)
+            .focused($isFocused)
             .onChange(of: newTask.title) { newValue in
               if newValue.count > 18 {
                 newTask.title = String(newValue.prefix(18))
@@ -29,6 +31,9 @@ struct AddTask: View {
         }
         AddTaskPriorityPickerView(selection: $newTask.priority)
         DatePickerView(selection: $newTask.date)
+          .onTapGesture {
+            isFocused = false
+          }
       }
       .navigationTitle("new".localized.capitalized(with: .current) + " " + "tasks".localized)
       .toolbar {
