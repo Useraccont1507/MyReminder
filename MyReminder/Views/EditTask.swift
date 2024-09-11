@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditTask: View {
-  @Environment(\..dismiss) private var dismiss
+  @Environment(\.dismiss) private var dismiss
   @EnvironmentObject var modelData: ModelData
   @State var transferedTask: Task
   @State private var alertErrorIsPresented = false
@@ -18,18 +18,16 @@ struct EditTask: View {
   var body: some View {
     NavigationStack {
       List {
-        VStack(alignment: .leading) {
-          Text("title".localized.localizedCapitalized)
-          TextField("add_text_here".localized, text: $transferedTask.title)
-            .textFieldStyle(.automatic)
-            .focused($isFocused)
-            .onChange(of: transferedTask.title) { newValue in
-              if newValue.count > 18 {
-                transferedTask.title = String(newValue.prefix(18))
-              }
-            }
-        }
-        
+        TextFieldTitleView(text: $transferedTask.title)
+          .focused($isFocused)
+          .onTapGesture {
+            isFocused = false
+          }
+        TextFieldBodyView(text: $transferedTask.body)
+          .focused($isFocused)
+          .onTapGesture {
+            isFocused = false
+          }
         AddTaskPriorityPickerView(selection: $transferedTask.priority)
         DatePickerView(selection: $transferedTask.date)
           .onTapGesture {

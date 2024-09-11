@@ -13,10 +13,18 @@ struct TaskListRow: View {
     var body: some View {
       HStack {
         CompleteButtonView(taskToComplete: task)
-        Text(task.title)
-          .font(.body)
+        VStack(alignment: .leading) {
+          Text(task.title)
+            .font(.body)
+          if let body = task.body {
+            Text(body)
+              .lineLimit(2)
+              .font(.footnote)
+              .foregroundStyle(.secondary)
+          }
+        }
         
-        Spacer()
+        Spacer(minLength: 30)
         
         task.dateTextView
       }
@@ -26,6 +34,7 @@ struct TaskListRow: View {
 #Preview {
   TaskListRow(task: ModelData().tasks.first ?? Task(
     title: "Test",
+    body: "Test body :)bgfbfgbfgbfgbfgbfgbfbgfgbfgbfgbfgbfgbfgbfgbfgbfgb",
     priority: .normal,
     isCompleted: false, date: Date())
   )

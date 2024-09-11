@@ -10,7 +10,7 @@ import SwiftUI
 struct AddTask: View {
   @Environment(\..dismiss) var dismiss
   @EnvironmentObject var modelData: ModelData
-  @State private var newTask = Task(title: "", priority: .normal, isCompleted: false, date: Date.now)
+  @State private var newTask = Task(title: "", body: nil, priority: .normal, isCompleted: false, date: Date.now)
   @State private var alertErrorIsPresented = false
   @State private var alertConfirmIsPresented = false
   @FocusState private var isFocused: Bool
@@ -18,17 +18,16 @@ struct AddTask: View {
   var body: some View {
     NavigationStack {
       List {
-        VStack(alignment: .leading) {
-          Text("title".localized.localizedCapitalized)
-          TextField("add_text_here".localized, text: $newTask.title)
-            .textFieldStyle(.automatic)
-            .focused($isFocused)
-            .onChange(of: newTask.title) { newValue in
-              if newValue.count > 18 {
-                newTask.title = String(newValue.prefix(18))
-              }
-            }
-        }
+        TextFieldTitleView(text: $newTask.title)
+          .focused($isFocused)
+          .onTapGesture {
+            isFocused = false
+          }
+        TextFieldBodyView(text: $newTask.body)
+          .focused($isFocused)
+          .onTapGesture {
+            isFocused = false
+          }
         AddTaskPriorityPickerView(selection: $newTask.priority)
         DatePickerView(selection: $newTask.date)
           .onTapGesture {

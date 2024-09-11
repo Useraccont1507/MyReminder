@@ -42,7 +42,6 @@ class ModelData: ObservableObject {
   }
   
   func makeTaskComplete(task: Task) {
-    print("fffffff")
     guard let index = tasks.firstIndex(where: {$0.id == task.id}) else {
       fatalError("cannot find index")
     }

@@ -12,6 +12,7 @@ struct Task: Identifiable, Equatable {
   var id = UUID()
   var notificationIdentifier = UUID().uuidString
   var title: String
+  var body: String?
   var priority: TaskPriority
   var isCompleted: Bool
   var date: Date

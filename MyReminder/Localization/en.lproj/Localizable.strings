@@ -17,11 +17,12 @@
 "edit" = "edit";
 
 
-"title" = "назва";
-"add_text_here" = "Введіть текст сюди";
-"priority" = "пріоритиет";
-"date" = "дата";
-"done" = "готово";
+"title" = "title";
+"body" = "In addition (optional)";
+"add_text_here" = "Enter text here";
+"priority" = "priority";
+"date" = "date";
+"done" = "done";
 
 "delete_all" = "Delete all history";
 "today" = "today";

@@ -11,6 +11,7 @@
 		CE2811552C8CC13700B19F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2811542C8CC13700B19F66 /* AppDelegate.swift */; };
 		CE2811572C8CCE0600B19F66 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2811562C8CCE0600B19F66 /* String+Extensions.swift */; };
 		CE28116E2C8CD0E200B19F66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE28116D2C8CD0E200B19F66 /* Localizable.strings */; };
+		CE2E304F2C919099009EE6AB /* TextFieldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E304E2C919099009EE6AB /* TextFieldViews.swift */; };
 		CE832CBE2C7F1EE200B64A4F /* MyReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CBD2C7F1EE200B64A4F /* MyReminderApp.swift */; };
 		CE832CC02C7F1EE200B64A4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CBF2C7F1EE200B64A4F /* ContentView.swift */; };
 		CE832CC22C7F1EE300B64A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE832CC12C7F1EE300B64A4F /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		CE2811562C8CCE0600B19F66 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		CE28116C2C8CD0E200B19F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE28116F2C8CD13300B19F66 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE2E304E2C919099009EE6AB /* TextFieldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViews.swift; sourceTree = "<group>"; };
 		CE832CBA2C7F1EE200B64A4F /* MyReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE832CBD2C7F1EE200B64A4F /* MyReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReminderApp.swift; sourceTree = "<group>"; };
 		CE832CBF2C7F1EE200B64A4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				CE832CEE2C7F847D00B64A4F /* PickerViews.swift */,
+				CE2E304E2C919099009EE6AB /* TextFieldViews.swift */,
 				CEDF023B2C846C8300BFB304 /* ComponentView.swift */,
 				CE832CDC2C7F2AE400B64A4F /* CompleteButtonView.swift */,
 				CE832CF02C7F86F000B64A4F /* AllPriorityTaskView.swift */,
@@ -245,6 +248,7 @@
 			files = (
 				CEDF02402C84933D00BFB304 /* TaskHistoryRow.swift in Sources */,
 				CE832CF32C7F8A0300B64A4F /* NormalPriorityTaskView.swift in Sources */,
+				CE2E304F2C919099009EE6AB /* TextFieldViews.swift in Sources */,
 				CE832CD42C7F256D00B64A4F /* TaskModel.swift in Sources */,
 				CE8E85AD2C88B544004F8E00 /* Storage.swift in Sources */,
 				CE832CF12C7F86F000B64A4F /* AllPriorityTaskView.swift in Sources */,

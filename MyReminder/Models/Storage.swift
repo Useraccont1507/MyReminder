@@ -21,6 +21,7 @@ class Storage {
       for dict in arrayOfDict {
         let notificationIdentifier = dict["notificationIdentifier"] as! String
         let title = dict["title"] as! String
+        let body = dict["body"] as! String?
         let priority = TaskPriority(rawValue: dict["priority"] as! String)!
         let isCompleted = dict["isCompleted"] as! Bool
         let date = dict["date"] as! Date
@@ -29,6 +30,7 @@ class Storage {
           Task(
             notificationIdentifier: notificationIdentifier,
             title: title,
+            body: body,
             priority: priority,
             isCompleted: isCompleted,
             date: date
@@ -46,6 +48,7 @@ class Storage {
       var dict: [String: Any] = [:]
       dict["notificationIdentifier"] = task.notificationIdentifier
       dict["title"] = task.title
+      dict["body"] = task.body
       dict["priority"] = task.priority.rawValue
       
       if task.isCompleted {

@@ -33,7 +33,7 @@ class LocalNotifications {
   }
   
   func addNotification(task: Task) {
-    let notification = Notification(body: task.title, date: task.date, identfier: task.notificationIdentifier)
+    let notification = Notification(title: task.title, body: task.body, date: task.date, identfier: task.notificationIdentifier)
     
     let trigger = UNCalendarNotificationTrigger(dateMatching: notification.dateComponent, repeats: false)
     let request = UNNotificationRequest(identifier: notification.identfier, content: notification.content, trigger: trigger)
@@ -56,15 +56,22 @@ class LocalNotifications {
   private init() {}
   
   struct Notification {
-    private let title = "MyReminder"
-    let body: String
+    let title: String
+    let body: String?
     let date: Date
     let identfier: String
     
     var content: UNMutableNotificationContent {
       let content = UNMutableNotificationContent()
-      content.title = self.title
-      content.body = self.body
+      
+      if let body = body {
+        content.title = self.title
+        content.body = body
+      } else {
+        content.title = "MyReminder"
+        content.body = self.title
+      }
+      
       content.sound = .default
       return content
     }
