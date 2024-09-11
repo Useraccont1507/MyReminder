@@ -34,7 +34,7 @@ struct AddTask: View {
             isFocused = false
           }
       }
-      .navigationTitle("new".localized.capitalized(with: .current) + " " + "tasks".localized)
+      .navigationTitle("new_task".localized)
       .toolbar {
         Button("done".localized.localizedCapitalized) {
           if newTask.title.isEmpty {

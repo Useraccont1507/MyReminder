@@ -17,6 +17,8 @@
 "edit" = "edit";
 
 
+"new_task" = "New task";
+"edit_task" = "Edit task";
 "title" = "title";
 "body" = "In addition (optional)";
 "add_text_here" = "Enter text here";
@@ -24,7 +26,7 @@
 "date" = "date";
 "done" = "done";
 
-"delete_all" = "Delete all history";
+"delete_all_history" = "Delete all history";
 "today" = "today";
 "completed" = "completed";
 "incompleted" = "incompleted";

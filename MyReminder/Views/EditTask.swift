@@ -34,7 +34,7 @@ struct EditTask: View {
             isFocused = false
           }
       }
-      .navigationTitle("edit".localized.localizedCapitalized)
+      .navigationTitle("edit_task".localized)
       .toolbar {
         Button("done".localized.localizedCapitalized) {
           if transferedTask.title.isEmpty {

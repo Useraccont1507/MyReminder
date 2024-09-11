@@ -12,8 +12,16 @@ struct TaskHistoryRow: View {
   
     var body: some View {
       HStack {
-        Text(task.title)
-          .font(.body)
+        VStack(alignment: .leading) {
+          Text(task.title)
+            .font(.body)
+          if let body = task.body {
+            Text(body)
+              .lineLimit(2)
+              .font(.footnote)
+              .foregroundStyle(.secondary)
+          }
+        }
         Spacer()
         task.dateTextView
       }

@@ -27,7 +27,7 @@ struct ContentView: View {
       AddTask()
         .tag("Add new")
         .tabItem {
-          Label("new".localized.localizedCapitalized + " " + "tasks".localized, systemImage: "plus")
+          Label("new_task".localized, systemImage: "plus")
         }
       TaskHistory()
         .tag("History")
