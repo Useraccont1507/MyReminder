@@ -18,8 +18,8 @@ struct MyReminderApp: App {
       ContentView()
         .environmentObject(modelData)
         .onAppear {
-          modelData.tasks = Storage.shared.load()
-          modelData.taskHistory = Storage.shared.load()
+          modelData.tasks = Storage.shared.load(forWhich: Storage.ArrayType.normalList)
+          modelData.taskHistory = Storage.shared.load(forWhich: Storage.ArrayType.historyList)
         }
     }
   }

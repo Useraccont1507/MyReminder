@@ -42,9 +42,9 @@ class LocalNotifications {
     
     notificationCenter.add(request) { error in
       if let error = error {
-        print("Error scheduling notification: \(error)")
+        //print("Error scheduling notification: \(error)")
       } else {
-        print("Notification for task '\(task.title)' scheduled!")
+        //print("Notification for task '\(task.title)' scheduled!")
       }
     }
   }

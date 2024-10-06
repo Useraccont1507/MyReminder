@@ -7,8 +7,8 @@
 
 import SwiftUI
 
+
 struct AddTask: View {
-  @Environment(\..dismiss) var dismiss
   @EnvironmentObject var modelData: ModelData
   @State private var newTask = Task(title: "", body: nil, priority: .normal, isCompleted: false, date: Date.now)
   @State private var alertErrorIsPresented = false
@@ -41,32 +41,34 @@ struct AddTask: View {
             alertErrorIsPresented.toggle()
           } else {
             modelData.addTask(task: newTask)
+            LocalNotifications.shared.checkForPermission(task: newTask)
+            newTask = Task(title: "", priority: .normal, isCompleted: false, date: Date.now)
             alertConfirmIsPresented.toggle()
           }
         }
         .bold()
       }
-      .alert("Oops_Something_went_wrong", isPresented: $alertErrorIsPresented) {
-        Button("OK") {
-          dismiss()
-        }
-      } message: {
-        Text("Task_can't_be_added_without_title")
+    }
+    .alert("Oops_Something_went_wrong", isPresented: $alertErrorIsPresented) {
+      Button("OK") {
+        self.alertErrorIsPresented.toggle()
       }
-      .alert("done".localized.localizedCapitalized + "!", isPresented: $alertConfirmIsPresented) {
-        Button("OK") {
-          dismiss()
-          
-        }
-      } message: {
-        Text("Task_was_successfully_added_in_list")
+    } message: {
+      Text("Task_can't_be_added_without_title")
+    }
+    .alert("done".localized.localizedCapitalized + "!", isPresented: $alertConfirmIsPresented) {
+      Button("OK") {
+        self.alertConfirmIsPresented.toggle()
       }
+    } message: {
+      Text("Task_was_successfully_added_in_list")
     }
     .onAppear {
       newTask = Task(title: "", priority: .normal, isCompleted: false, date: Date.now)
     }
   }
 }
+
 
 #Preview {
   AddTask()

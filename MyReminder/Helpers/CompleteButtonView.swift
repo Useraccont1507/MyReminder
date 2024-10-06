@@ -15,13 +15,13 @@ struct CompleteButtonView: View {
   
   var body: some View {
     Button(action: {
-      Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false) { timer in
-        withAnimation(.easeInOut) {
-          modelData.makeTaskComplete(task: taskToComplete)
-        }
+      withAnimation(.easeInOut) {
+        buttonName = "checkmark.circle.fill"
+        isDisabled = true
       }
-      buttonName = "checkmark.circle.fill"
-      isDisabled = true
+      Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false) { timer in
+        modelData.makeTaskComplete(task: taskToComplete)
+      }
     }, label: {
       Image(systemName: buttonName)
         .foregroundStyle(.accent)

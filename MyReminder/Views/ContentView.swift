@@ -20,17 +20,17 @@ struct ContentView: View {
   var body: some View {
     TabView(selection: $selection) {
       TaskList()
-        .tag("List")
+        .tag(Tab.taskList)
         .tabItem {
           Label("tasks".localized.localizedCapitalized, systemImage: "list.bullet")
         }
       AddTask()
-        .tag("Add new")
+        .tag(Tab.addTask)
         .tabItem {
           Label("new_task".localized, systemImage: "plus")
         }
       TaskHistory()
-        .tag("History")
+        .tag(Tab.taskHistory)
         .tabItem {
           Label("history".localized.localizedCapitalized, systemImage: "clock")
         }

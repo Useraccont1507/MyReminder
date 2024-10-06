@@ -8,23 +8,17 @@
 import Foundation
 
 class ModelData: ObservableObject {
-  @Published var tasks: [Task] = [] {
-    didSet {
-      Storage.shared.save(tasks: tasks)
-    }
-  }
-  
-  @Published var taskHistory: [Task] = [] {
-    didSet {
-      Storage.shared.save(tasks: taskHistory)
-    }
-  }
+  @Published var tasks: [Task] = []
+  @Published var taskHistory: [Task] = []
   
   func addTask(task: Task) {
     tasks.append(task)
     taskHistory.append(task)
     
-    LocalNotifications.shared.checkForPermission(task: task)
+    DispatchQueue.global(qos: .background).async {
+      Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
+      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
+    }
   }
   
   func editTask(task: Task) {
@@ -32,33 +26,51 @@ class ModelData: ObservableObject {
       fatalError("cannot find index")
     }
     tasks[index] = task
+    
+    DispatchQueue.global(qos: .background).async {
+      Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
+      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
+    }
+    
+    LocalNotifications.shared.checkForPermission(task: task)
+    
     guard let secondaryIndex = taskHistory.firstIndex(where: { $0.id == task.id}) else {
       taskHistory.append(task)
       return
     }
     taskHistory[secondaryIndex] = task
-    
-    LocalNotifications.shared.checkForPermission(task: task)
   }
   
   func makeTaskComplete(task: Task) {
     guard let index = tasks.firstIndex(where: {$0.id == task.id}) else {
       fatalError("cannot find index")
     }
-    DispatchQueue.main.async {
-      self.tasks.remove(at: index)
+    self.tasks.remove(at: index)
+    self.taskHistory[index].isCompleted = true
+    
+    DispatchQueue.global(qos: .background).async {
+      Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
+      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
     }
-    taskHistory[index].isCompleted = true
     
     LocalNotifications.shared.removeNotification(task: task)
   }
   
   func deleteTask(indexSet: IndexSet) {
-    LocalNotifications.shared.removeNotification(task: tasks[indexSet.first!])
-    tasks.remove(atOffsets: indexSet)
+    LocalNotifications.shared.removeNotification(task: self.tasks[indexSet.first!])
+    self.tasks.remove(atOffsets: indexSet)
+    
+    DispatchQueue.global(qos: .background).async {
+      Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
+      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
+    }
   }
   
   func deleteAllHistory() {
     taskHistory.removeAll()
+    
+    DispatchQueue.global(qos: .background).async {
+      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
+    }
   }
 }

@@ -10,14 +10,22 @@ import Foundation
 class Storage {
   static let shared = Storage()
   private var storage = UserDefaults.standard
-  private var storageKey = "storage_key_1234567890987654321"
+  private var storageKeyForNormalList = "storage_key_1234567890987654321"
+  private var storageKeyForHistoryList = "storage_key_1234567890987655555"
   
   private init() {}
   
-  func load() -> [Task] {
+  func load(forWhich: ArrayType) -> [Task] {
+    let storageKey: String
+    switch forWhich {
+    case .normalList:
+      storageKey = storageKeyForNormalList
+    case .historyList:
+      storageKey = storageKeyForHistoryList
+    }
+    
     var arrayToReturn: [Task] = []
     if let arrayOfDict = storage.array(forKey: storageKey) as? [[String: Any]] {
-      print(arrayOfDict)
       for dict in arrayOfDict {
         let notificationIdentifier = dict["notificationIdentifier"] as! String
         let title = dict["title"] as! String
@@ -38,11 +46,18 @@ class Storage {
         )
       }
     }
-    print(arrayToReturn)
     return arrayToReturn
   }
   
-  func save(tasks: [Task]) {
+  func save(tasks: [Task], forWhich: ArrayType) {
+    let storageKey: String
+    switch forWhich {
+    case .normalList:
+      storageKey = storageKeyForNormalList
+    case .historyList:
+      storageKey = storageKeyForHistoryList
+    }
+    
     var arrayOfDict: [[String:Any]] = []
     for task in tasks {
       var dict: [String: Any] = [:]
@@ -60,9 +75,12 @@ class Storage {
       dict["date"] = task.date
       arrayOfDict.append(dict)
     }
-    print(arrayOfDict)
     storage.setValue(arrayOfDict, forKey: storageKey)
   }
+  
+  enum ArrayType {
+    case normalList
+    case historyList
+  }
 }
-
 
