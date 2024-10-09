@@ -15,7 +15,7 @@ class ModelData: ObservableObject {
     tasks.append(task)
     taskHistory.append(task)
     
-    DispatchQueue.global(qos: .background).async {
+    DispatchQueue.global(qos: .userInitiated).async {
       Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
       Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
     }
@@ -27,7 +27,7 @@ class ModelData: ObservableObject {
     }
     tasks[index] = task
     
-    DispatchQueue.global(qos: .background).async {
+    DispatchQueue.global(qos: .userInitiated).async {
       Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
       Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
     }
@@ -48,7 +48,7 @@ class ModelData: ObservableObject {
     self.tasks.remove(at: index)
     self.taskHistory[index].isCompleted = true
     
-    DispatchQueue.global(qos: .background).async {
+    DispatchQueue.global(qos: .userInitiated).async {
       Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
       Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
     }
@@ -60,7 +60,7 @@ class ModelData: ObservableObject {
     LocalNotifications.shared.removeNotification(task: self.tasks[indexSet.first!])
     self.tasks.remove(atOffsets: indexSet)
     
-    DispatchQueue.global(qos: .background).async {
+    DispatchQueue.global(qos: .userInitiated).async {
       Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
       Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
     }
@@ -69,7 +69,7 @@ class ModelData: ObservableObject {
   func deleteAllHistory() {
     taskHistory.removeAll()
     
-    DispatchQueue.global(qos: .background).async {
+    DispatchQueue.global(qos: .userInitiated).async {
       Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
     }
   }
