@@ -9,17 +9,17 @@ import SwiftUI
 
 @main
 struct MyReminderApp: App {
-  @StateObject var modelData = ModelData()
+  @StateObject var viewModel = ViewModel()
   // Register AppDelegate
   @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(modelData)
+        .environmentObject(viewModel)
         .onAppear {
-          modelData.tasks = Storage.shared.load(forWhich: Storage.ArrayType.normalList)
-          modelData.taskHistory = Storage.shared.load(forWhich: Storage.ArrayType.historyList)
+          viewModel.tasks = Storage.shared.load(forWhich: Storage.ArrayType.normalList)
+          viewModel.taskHistory = Storage.shared.load(forWhich: Storage.ArrayType.historyList)
         }
     }
   }
