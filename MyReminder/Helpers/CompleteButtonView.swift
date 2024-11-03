@@ -20,7 +20,7 @@ struct CompleteButtonView: View {
         isDisabled = true
       }
       Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: false) { timer in
-        modelData.makeTaskComplete(task: taskToComplete)
+        viewModel.makeTaskComplete(task: taskToComplete)
       }
     }, label: {
       Image(systemName: buttonName)
@@ -39,10 +39,10 @@ struct CompleteButtonView: View {
 }
 
 #Preview {
-  CompleteButtonView(taskToComplete: ModelData().tasks.first ?? Task(
+  CompleteButtonView(taskToComplete: ViewModel().tasks.first ?? Task(
     title: "Test",
     priority: .normal,
     isCompleted: false, date: Date())
   )
-  .environmentObject(ModelData())
+  .environmentObject(ViewModel())
 }
