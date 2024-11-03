@@ -32,7 +32,7 @@ struct TaskListRow: View {
 }
 
 #Preview {
-  TaskListRow(task: ModelData().tasks.first ?? Task(
+  TaskListRow(task: ViewModel().tasks.first ?? Task(
     title: "Test",
     body: "Test body :)bgfbfgbfgbfgbfgbfgbfbgfgbfgbfgbfgbfgbfgbfgbfgbfgb",
     priority: .normal,

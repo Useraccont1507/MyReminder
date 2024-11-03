@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct AddTask: View {
-  @EnvironmentObject var modelData: ModelData
+  @EnvironmentObject var viewModel: ViewModel
   @State private var newTask = Task(title: "", body: nil, priority: .normal, isCompleted: false, date: Date.now)
   @State private var alertErrorIsPresented = false
   @State private var alertConfirmIsPresented = false
@@ -40,7 +40,7 @@ struct AddTask: View {
           if newTask.title.isEmpty {
             alertErrorIsPresented.toggle()
           } else {
-            modelData.addTask(task: newTask)
+            viewModel.addTask(task: newTask)
             LocalNotifications.shared.checkForPermission(task: newTask)
             newTask = Task(title: "", priority: .normal, isCompleted: false, date: Date.now)
             alertConfirmIsPresented.toggle()
@@ -72,5 +72,5 @@ struct AddTask: View {
 
 #Preview {
   AddTask()
-    .environmentObject(ModelData())
+    .environmentObject(ViewModel())
 }

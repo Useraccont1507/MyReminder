@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskHistory: View {
-  @EnvironmentObject var modelData: ModelData
+  @EnvironmentObject var viewModel: ViewModel
   
   @State var todayTasks: [Task] = []
   @State var completedTasks: [Task] = []
@@ -33,11 +33,11 @@ struct TaskHistory: View {
                 .padding(.vertical)
             }
             NavigationLink {
-              HistoryTaskView(listTitle: "all".localized.localizedCapitalized, tasks: modelData.taskHistory)
+              HistoryTaskView(listTitle: "all".localized.localizedCapitalized, tasks: viewModel.taskHistory)
             } label: {
               ComponentView(
                 labelText: "all".localized.localizedCapitalized,
-                labelCount: modelData.taskHistory.count,
+                labelCount: viewModel.taskHistory.count,
                 systemImageName: "folder.circle.fill",
                 imageForegroundColor: .blue
               )
@@ -76,22 +76,22 @@ struct TaskHistory: View {
       .background(Color(UIColor.historyBackground))
       .toolbar(content: {
         Button("delete_all_history".localized) {
-          modelData.deleteAllHistory()
-          todayTasks = modelData.taskHistory.filter { Calendar.current.isDateInToday($0.date) }
-          completedTasks = modelData.taskHistory.filter { $0.isCompleted == true }
-          incompletedTasks = modelData.taskHistory.filter { $0.isCompleted == false }
+          viewModel.deleteAllHistory()
+          todayTasks = viewModel.taskHistory.filter { Calendar.current.isDateInToday($0.date) }
+          completedTasks = viewModel.taskHistory.filter { $0.isCompleted == true }
+          incompletedTasks = viewModel.taskHistory.filter { $0.isCompleted == false }
         }
       })
     }
     .onAppear {
-      todayTasks = modelData.taskHistory.filter { Calendar.current.isDateInToday($0.date) }
-      completedTasks = modelData.taskHistory.filter { $0.isCompleted == true }
-      incompletedTasks = modelData.taskHistory.filter { $0.isCompleted == false }
+      todayTasks = viewModel.taskHistory.filter { Calendar.current.isDateInToday($0.date) }
+      completedTasks = viewModel.taskHistory.filter { $0.isCompleted == true }
+      incompletedTasks = viewModel.taskHistory.filter { $0.isCompleted == false }
     }
   }
 }
 
 #Preview {
   TaskHistory()
-    .environmentObject(ModelData())
+    .environmentObject(ViewModel())
 }

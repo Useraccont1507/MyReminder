@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CompleteButtonView: View {
-  @EnvironmentObject var modelData: ModelData
+  @EnvironmentObject var viewModel: ViewModel
   @State private var buttonName = "checkmark.circle"
   @State private var isDisabled = false
   var taskToComplete: Task

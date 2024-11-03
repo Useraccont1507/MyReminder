@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TaskList: View {
   @Environment(\.editMode) private var editMode
-  @EnvironmentObject var modelData: ModelData
+  @EnvironmentObject var viewModel: ViewModel
   @State private var pickerSelection: PickerModel = .all
   
   var body: some View {
@@ -17,11 +17,11 @@ struct TaskList: View {
       List {
         switch pickerSelection {
         case .important:
-          ImportantPriorityTaskView(tasks: modelData.tasks)
+          ImportantPriorityTaskView(tasks: viewModel.tasks)
         case .normal:
-          NormalPriorityTaskView(tasks: modelData.tasks)
+          NormalPriorityTaskView(tasks: viewModel.tasks)
         case .all:
-          AllPriorityTaskView(tasks: modelData.tasks)
+          AllPriorityTaskView(tasks: viewModel.tasks)
         }
       }
       .navigationTitle("tasks".localized.localizedCapitalized)
@@ -39,5 +39,5 @@ struct TaskList: View {
 
 #Preview {
   TaskList()
-    .environmentObject(ModelData())
+    .environmentObject(ViewModel())
 }

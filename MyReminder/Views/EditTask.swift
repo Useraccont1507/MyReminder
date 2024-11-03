@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditTask: View {
   @Environment(\.dismiss) private var dismiss
-  @EnvironmentObject var modelData: ModelData
+  @EnvironmentObject var viewModel: ViewModel
   @State var transferedTask: Task
   @State private var alertErrorIsPresented = false
   @State private var alertConfirmIsPresented = false
@@ -40,7 +40,7 @@ struct EditTask: View {
           if transferedTask.title.isEmpty {
             alertErrorIsPresented.toggle()
           } else {
-            modelData.editTask(task: transferedTask)
+            viewModel.editTask(task: transferedTask)
             alertConfirmIsPresented.toggle()
           }
         }

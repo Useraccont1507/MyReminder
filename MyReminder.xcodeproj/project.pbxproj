@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE2811402C89A42000B19F66 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28113F2C89A42000B19F66 /* NotificationModel.swift */; };
+		CE2811402C89A42000B19F66 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28113F2C89A42000B19F66 /* Notifications.swift */; };
 		CE2811552C8CC13700B19F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2811542C8CC13700B19F66 /* AppDelegate.swift */; };
 		CE2811572C8CCE0600B19F66 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2811562C8CCE0600B19F66 /* String+Extensions.swift */; };
 		CE28116E2C8CD0E200B19F66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE28116D2C8CD0E200B19F66 /* Localizable.strings */; };
@@ -19,8 +19,8 @@
 		CE832CCC2C7F204100B64A4F /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CCB2C7F204100B64A4F /* TaskList.swift */; };
 		CE832CCE2C7F205600B64A4F /* AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CCD2C7F205600B64A4F /* AddTask.swift */; };
 		CE832CD02C7F206B00B64A4F /* TaskHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CCF2C7F206B00B64A4F /* TaskHistory.swift */; };
-		CE832CD42C7F256D00B64A4F /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CD32C7F256D00B64A4F /* TaskModel.swift */; };
-		CE832CD62C7F263200B64A4F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CD52C7F263200B64A4F /* ModelData.swift */; };
+		CE832CD42C7F256D00B64A4F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CD32C7F256D00B64A4F /* Model.swift */; };
+		CE832CD62C7F263200B64A4F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CD52C7F263200B64A4F /* ViewModel.swift */; };
 		CE832CD82C7F276700B64A4F /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CD72C7F276700B64A4F /* TaskListRow.swift */; };
 		CE832CDD2C7F2AE400B64A4F /* CompleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CDC2C7F2AE400B64A4F /* CompleteButtonView.swift */; };
 		CE832CED2C7F82F400B64A4F /* PickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE832CEC2C7F82F400B64A4F /* PickerModel.swift */; };
@@ -36,7 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE28113F2C89A42000B19F66 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		CE28113F2C89A42000B19F66 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		CE2811542C8CC13700B19F66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE2811562C8CCE0600B19F66 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		CE28116C2C8CD0E200B19F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -50,8 +50,8 @@
 		CE832CCB2C7F204100B64A4F /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 		CE832CCD2C7F205600B64A4F /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
 		CE832CCF2C7F206B00B64A4F /* TaskHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHistory.swift; sourceTree = "<group>"; };
-		CE832CD32C7F256D00B64A4F /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
-		CE832CD52C7F263200B64A4F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		CE832CD32C7F256D00B64A4F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CE832CD52C7F263200B64A4F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		CE832CD72C7F276700B64A4F /* TaskListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		CE832CDC2C7F2AE400B64A4F /* CompleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButtonView.swift; sourceTree = "<group>"; };
 		CE832CEC2C7F82F400B64A4F /* PickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModel.swift; sourceTree = "<group>"; };
@@ -149,11 +149,11 @@
 		CE832CD22C7F255900B64A4F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE832CD32C7F256D00B64A4F /* TaskModel.swift */,
-				CE28113F2C89A42000B19F66 /* NotificationModel.swift */,
+				CE832CD32C7F256D00B64A4F /* Model.swift */,
+				CE28113F2C89A42000B19F66 /* Notifications.swift */,
 				CE8E85AC2C88B544004F8E00 /* Storage.swift */,
 				CE832CEC2C7F82F400B64A4F /* PickerModel.swift */,
-				CE832CD52C7F263200B64A4F /* ModelData.swift */,
+				CE832CD52C7F263200B64A4F /* ViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 				CEDF02402C84933D00BFB304 /* TaskHistoryRow.swift in Sources */,
 				CE832CF32C7F8A0300B64A4F /* NormalPriorityTaskView.swift in Sources */,
 				CE2E304F2C919099009EE6AB /* TextFieldViews.swift in Sources */,
-				CE832CD42C7F256D00B64A4F /* TaskModel.swift in Sources */,
+				CE832CD42C7F256D00B64A4F /* Model.swift in Sources */,
 				CE8E85AD2C88B544004F8E00 /* Storage.swift in Sources */,
 				CE832CF12C7F86F000B64A4F /* AllPriorityTaskView.swift in Sources */,
 				CE832CCE2C7F205600B64A4F /* AddTask.swift in Sources */,
@@ -267,8 +267,8 @@
 				CE832CC02C7F1EE200B64A4F /* ContentView.swift in Sources */,
 				CE832CBE2C7F1EE200B64A4F /* MyReminderApp.swift in Sources */,
 				CE2811552C8CC13700B19F66 /* AppDelegate.swift in Sources */,
-				CE2811402C89A42000B19F66 /* NotificationModel.swift in Sources */,
-				CE832CD62C7F263200B64A4F /* ModelData.swift in Sources */,
+				CE2811402C89A42000B19F66 /* Notifications.swift in Sources */,
+				CE832CD62C7F263200B64A4F /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

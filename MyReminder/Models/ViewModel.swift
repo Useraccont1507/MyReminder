@@ -1,5 +1,5 @@
 //
-//  ModelData.swift
+//  ViewModel.swift
 //  MyReminder
 //
 //  Created by User on 28.08.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ModelData: ObservableObject {
+class ViewModel: ObservableObject {
   @Published var tasks: [Task] = []
   @Published var taskHistory: [Task] = []
   

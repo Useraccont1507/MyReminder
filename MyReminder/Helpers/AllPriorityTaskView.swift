@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllPriorityTaskView: View {
-  @EnvironmentObject var modelData: ModelData
+  @EnvironmentObject var viewModel: ViewModel
   var tasks: [Task]
   var body: some View {
     ForEach(TaskPriority.allCases){ priority in
@@ -21,7 +21,7 @@ struct AllPriorityTaskView: View {
           }
         }
         .onDelete(perform: { indexSet in
-          modelData.deleteTask(indexSet: indexSet)
+          viewModel.deleteTask(indexSet: indexSet)
         })
       }
     }

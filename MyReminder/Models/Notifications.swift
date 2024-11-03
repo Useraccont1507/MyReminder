@@ -1,5 +1,5 @@
 //
-//  NotificationModel.swift
+//  Notification.swift
 //  MyReminder
 //
 //  Created by User on 05.09.2024.
