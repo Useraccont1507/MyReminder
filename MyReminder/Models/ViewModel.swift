@@ -8,17 +8,20 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-  @Published var tasks: [Task] = []
-  @Published var taskHistory: [Task] = []
+  @Published var tasks: [Task] = [] {
+    didSet {
+      Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
+    }
+  }
+  @Published var taskHistory: [Task] = [] {
+    didSet {
+      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
+    }
+  }
   
   func addTask(task: Task) {
     tasks.append(task)
     taskHistory.append(task)
-    
-    DispatchQueue.global(qos: .userInitiated).async {
-      Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
-      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
-    }
   }
   
   func editTask(task: Task) {
@@ -26,11 +29,6 @@ class ViewModel: ObservableObject {
       fatalError("cannot find index")
     }
     tasks[index] = task
-    
-    DispatchQueue.global(qos: .userInitiated).async {
-      Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
-      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
-    }
     
     LocalNotifications.shared.checkForPermission(task: task)
     
@@ -48,29 +46,15 @@ class ViewModel: ObservableObject {
     self.tasks.remove(at: index)
     self.taskHistory[index].isCompleted = true
     
-    DispatchQueue.global(qos: .userInitiated).async {
-      Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
-      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
-    }
-    
     LocalNotifications.shared.removeNotification(task: task)
   }
   
   func deleteTask(indexSet: IndexSet) {
     LocalNotifications.shared.removeNotification(task: self.tasks[indexSet.first!])
     self.tasks.remove(atOffsets: indexSet)
-    
-    DispatchQueue.global(qos: .userInitiated).async {
-      Storage.shared.save(tasks: self.tasks, forWhich: Storage.ArrayType.normalList)
-      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
-    }
   }
   
   func deleteAllHistory() {
     taskHistory.removeAll()
-    
-    DispatchQueue.global(qos: .userInitiated).async {
-      Storage.shared.save(tasks: self.taskHistory, forWhich: Storage.ArrayType.historyList)
-    }
   }
 }
