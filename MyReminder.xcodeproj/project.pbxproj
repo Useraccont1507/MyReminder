@@ -107,7 +107,6 @@
 			children = (
 				CE832CBC2C7F1EE200B64A4F /* MyReminder */,
 				CE832CBB2C7F1EE200B64A4F /* Products */,
-				F4B398A42D7374CE00FE3031 /* TaskList */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +128,7 @@
 				CE832CDB2C7F2AAB00B64A4F /* Helpers */,
 				CE832CC12C7F1EE300B64A4F /* Assets.xcassets */,
 				CE832CC32C7F1EE300B64A4F /* Preview Content */,
+				F4B398A42D7374CE00FE3031 /* TaskList */,
 			);
 			path = MyReminder;
 			sourceTree = "<group>";
