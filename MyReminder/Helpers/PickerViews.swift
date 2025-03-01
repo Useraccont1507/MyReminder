@@ -1,17 +1,5 @@
 import SwiftUI
 
-struct ListPickerView: View {
-  @Binding var selection: PickerModel
-  
-  var body: some View {
-    Picker("", selection: $selection) {
-      Text("all".localized.localizedCapitalized).tag(PickerModel.all)
-      Text("important".localized.localizedCapitalized).tag(PickerModel.important)
-      Text("normal".localized.localizedCapitalized).tag(PickerModel.normal)
-    }
-  }
-}
-
 struct AddTaskPriorityPickerView: View {
   @Binding var selection: TaskPriority
   

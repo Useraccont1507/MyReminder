@@ -19,7 +19,7 @@ struct ContentView: View {
   
   var body: some View {
     TabView(selection: $selection) {
-      TaskList()
+        TaskListView(viewModel: TaskListViewModel())
         .tag(Tab.taskList)
         .tabItem {
           Label("tasks".localized.localizedCapitalized, systemImage: "list.bullet")

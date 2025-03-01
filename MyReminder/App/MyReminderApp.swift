@@ -15,12 +15,13 @@ struct MyReminderApp: App {
   
   var body: some Scene {
     WindowGroup {
-      ContentView()
-        .environmentObject(viewModel)
-        .onAppear {
-          viewModel.tasks = Storage.shared.load(forWhich: Storage.ArrayType.normalList)
-          viewModel.taskHistory = Storage.shared.load(forWhich: Storage.ArrayType.historyList)
-        }
+//      ContentView()
+//        .environmentObject(viewModel)
+//        .onAppear {
+//          viewModel.tasks = Storage.shared.load(forWhich: Storage.ArrayType.normalList)
+//          viewModel.taskHistory = Storage.shared.load(forWhich: Storage.ArrayType.historyList)
+//        }
+        TaskListView(viewModel: TaskListViewModel())
     }
   }
 }
