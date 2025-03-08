@@ -9,19 +9,22 @@ import SwiftUI
 
 @main
 struct MyReminderApp: App {
-  @StateObject var viewModel = ViewModel()
-  // Register AppDelegate
-  @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-  
-  var body: some Scene {
-    WindowGroup {
-//      ContentView()
-//        .environmentObject(viewModel)
-//        .onAppear {
-//          viewModel.tasks = Storage.shared.load(forWhich: Storage.ArrayType.normalList)
-//          viewModel.taskHistory = Storage.shared.load(forWhich: Storage.ArrayType.historyList)
-//        }
-        TaskListView(viewModel: TaskListViewModel())
+    
+    private let builder = Builder()
+    
+    var body: some Scene {
+        WindowGroup {
+            builder.buildTabView()
+        }
     }
-  }
+}
+
+class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
+        completionHandler([.banner, .sound])
+    }
 }
