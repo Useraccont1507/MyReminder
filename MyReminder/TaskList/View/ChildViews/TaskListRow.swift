@@ -12,22 +12,30 @@ struct TaskListRow: View {
     @ObservedObject var viewModel: TaskListViewModel
     
     var body: some View {
-        HStack {
-            CompleteButtonView(viewModel: viewModel, taskToComplete: task)
-            VStack(alignment: .leading) {
-                Text(task.title)
-                    .font(.body)
-                if let body = task.body {
-                    Text(body)
-                        .lineLimit(2)
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                }
+        ZStack {
+            Button {
+                viewModel.editTask(task: task)
+            } label: {
+                Color.clear
             }
-            
-            Spacer(minLength: 30)
-            
-            task.dateTextView
+
+            HStack {
+                CompleteButtonView(viewModel: viewModel, taskToComplete: task)
+                VStack(alignment: .leading) {
+                    Text(task.title)
+                        .font(.body)
+                    if let body = task.body {
+                        Text(body)
+                            .lineLimit(2)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                
+                Spacer(minLength: 30)
+                
+                task.dateTextView
+            }
         }
     }
 }

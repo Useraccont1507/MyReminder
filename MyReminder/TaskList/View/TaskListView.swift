@@ -33,6 +33,9 @@ struct TaskListView: View {
                 }
             })
         }
+        .onAppear {
+            viewModel.updateTasks()
+        }
     }
 }
 
@@ -49,5 +52,5 @@ struct ListPickerView: View {
 }
 
 #Preview {
-    TaskListView(viewModel: TaskListViewModel())
+    TaskListView(viewModel: TaskListViewModel(storage: nil, notificationService: nil))
 }

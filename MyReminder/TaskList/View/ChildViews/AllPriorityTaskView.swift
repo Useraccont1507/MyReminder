@@ -11,17 +11,20 @@ struct AllPriorityTaskView: View {
     @ObservedObject var viewModel: TaskListViewModel
     
     var body: some View {
-        List {
-            ForEach(TaskPriority.allCases){ priority in
-                Section(priority.rawValue.localized) {
-                    ForEach(viewModel.tasks) { task in
-                        if task.priority == priority {
-                            TaskListRow(task: task, viewModel: viewModel)
+        NavigationView {
+            List {
+                ForEach(TaskPriority.allCases, id: \.self) { priority in
+                    let filteredTasks = viewModel.tasks.filter { $0.priority == priority }
+                    if !filteredTasks.isEmpty {
+                        Section(header: Text(priority.rawValue.localized)) {
+                            ForEach(filteredTasks) { task in
+                                TaskListRow(task: task, viewModel: viewModel)
+                            }
+                            .onDelete { indexSet in
+                                viewModel.deleteTask(indexSet: indexSet)
+                            }
                         }
                     }
-                    .onDelete(perform: { indexSet in
-                        viewModel.deleteTask(indexSet: indexSet)
-                    })
                 }
             }
         }

@@ -11,22 +11,22 @@ struct ImportantPriorityTaskView: View {
     @ObservedObject var viewModel: TaskListViewModel
     
     var body: some View {
+        let importantTasks = viewModel.tasks.filter { $0.priority == .important }
         List {
-            Section("important".localized) {
-                ForEach(viewModel.tasks) { task in
-                    if task.priority == .important {
+            if !importantTasks.isEmpty {
+                Section(header: Text("important".localized)) {
+                    ForEach(importantTasks) { task in
                         TaskListRow(task: task, viewModel: viewModel)
-                            
+                    }
+                    .onDelete { indexSet in
+                        viewModel.deleteTask(indexSet: indexSet)
                     }
                 }
-                .onDelete(perform: { indexSet in
-                    viewModel.deleteTask(indexSet: indexSet)
-                })
             }
         }
     }
 }
 
 #Preview {
-    ImportantPriorityTaskView(viewModel: TaskListViewModel())
+    ImportantPriorityTaskView(viewModel: TaskListViewModel(storage: nil, notificationService: nil))
 }
