@@ -65,5 +65,5 @@ struct AddTaskView: View {
 
 
 #Preview {
-    AddTaskView(viewModel: AddTaskViewModel(notificationService: nil))
+    AddTaskView(viewModel: AddTaskViewModel(storage: nil, notificationService: nil))
 }

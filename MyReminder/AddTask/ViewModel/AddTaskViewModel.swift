@@ -8,18 +8,19 @@
 import Foundation
 
 final class AddTaskViewModel: ObservableObject {
-    private var notificationService: NotificationService? = nil
+    private var notificationService: NotificationService?
+    private var storage: CoreDataService?
     
-    init(notificationService: NotificationService?) {
+    init(storage: CoreDataService? = nil, notificationService: NotificationService? = nil) {
+        self.storage = storage
         self.notificationService = notificationService
     }
     
     @Published var taskToAdd: Task = Task(title: "", priority: .normal, isCompleted: false, date: .now)
     
     func saveTask() {
-        //Do smth storage
+        storage?.saveTask(taskToAdd)
         notificationService?.checkPermissionAndCreateNotification(for: taskToAdd)
-        print("Saved task \(taskToAdd)")
         eraseTaskForView()
     }
     
