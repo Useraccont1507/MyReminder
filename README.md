@@ -6,15 +6,13 @@ MyReminder —  app for organizing your schedule. Create tasks, receive notifica
 - 📅 Easily create your task and manage them
 - 🔔 Notify important events
 - 🎨 Easy and intuitive interface
-- 💡 See your task history
 
 ## 🛠️ Technologies
 
 - Swift
 - SwiftUI
-- UserDefaults
+- CoreData
 - UserNotifications
-- Grand Central Dispatch (GCD)
 - Language localization
 
 ## 📸 Screenshots
