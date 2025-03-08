@@ -24,12 +24,9 @@
 "add_text_here" = "Enter text here";
 "priority" = "priority";
 "date" = "date";
+"back" = "back";
 "done" = "done";
 
-"delete_all_history" = "Delete all history";
-"today" = "today";
-"completed" = "completed";
-"incompleted" = "incompleted";
 
 "Oops_Something_went_wrong" = "Oops! Something went wrong";
 "Task_can't_be_added_without_title" = "Task can't be added without title";
