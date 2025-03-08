@@ -19,7 +19,7 @@ final class NotificationService {
     func requestAuthorization() {
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { isActivated, error in
             if !isActivated {
-                // Show alert view
+                print("Do not activated")
             }
         }
     }
@@ -30,8 +30,7 @@ final class NotificationService {
             case .notDetermined:
                 self?.requestAuthorization()
             case .denied:
-                //Show alert view
-                print()
+                print("denied")
             case .authorized:
                 DispatchQueue.main.async {
                     self?.addNotification(task: task)
@@ -41,8 +40,7 @@ final class NotificationService {
                     self?.addNotification(task: task)
                 }
             case .ephemeral:
-                //Show alert view
-                print()
+                print("ephemeral")
             }
         }
     }
@@ -57,7 +55,7 @@ final class NotificationService {
         
         notificationCenter.add(request) { error in
             if let error = error {
-                //showAlert
+                print("notificationError: \n\(error.localizedDescription)")
             }
         }
     }
